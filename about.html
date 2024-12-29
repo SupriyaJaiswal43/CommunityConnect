@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>About Us - Hum Raahi Foundation</title>
+    <style>
+        body {
+          
+          font-family: 'Merriweather', serif;
+      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .aboutcontainer {
+           
+            width: 100%;
+            max-width: 1440px;
+            height: auto;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .about-section {
+            
+          
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .about-left {
+            flex: 1;
+            position: relative;
+            width: 558px;
+            height: 641px;
+        }
+
+        .about-image {
+            width: 563px;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 8px;
+            padding-top: 6px;
+            padding-left: -5px;
+        }
+
+        .quote-card {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-left: 90px;
+            width: 412px;
+            height: 200px; /* Reduced height */
+        }
+
+        .quote-content {
+            display: flex;
+            gap: 16px;
+        }
+
+        .quote-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .quote-text {
+            flex: 1;
+        }
+
+        .quote-text p {
+            color: #555;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .quote-position {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .about-right {
+            flex: 1;
+            padding-top: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            
+            color: #05625C;
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .section-header::before {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #0f6657;
+            margin-right: 10px;
+        }
+
+        .about-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #000000;
+           
+        }
+
+        .about-quote {
+            font-style: italic;
+            color: #000000;
+            font-weight: 700;
+          
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+
+        .about-description {
+            color: #000000;
+            font-size: 16px;
+            font-weight: 400;
+          
+            margin-bottom: 32px;
+        }
+
+        .read-more {
+            background: #1a8a71;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background: #157a63;
+        }
+
+        @media (min-width: 992px) {
+            .about-section {
+                flex-direction: row;
+                gap: 60px;
+                align-items: flex-start;
+            }
+        }
+
+        .about-left {
+            width: 100%;
+            position: relative;
+        }
+
+        @media (min-width: 992px) {
+            .about-left {
+                flex: 1;
+                width: 558px;
+            }
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            max-width: 563px;
+            max-height: 430px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .quote-card {
+            position: relative;
+            background: white;
+            padding: 44px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 412px;
+            margin: 40px auto;
+            height: 100%;
+            
+        }
+
+        @media (min-width: 992px) {
+            .quote-card {
+                position: absolute;
+                bottom: 60px;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-left: 90px;
+            }
+        }
+
+        .quote-content {
+            display: flex;
+            gap: 16px;
+        }
+
+        .quote-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .quote-text {
+            flex: 1;
+        }
+
+        .quote-text p {
+            color: #555;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .quote-position {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .about-right {
+            flex: 1;
+            padding-top: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+          
+            color: #05625C;
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .section-header::before {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #0f6657;
+            margin-right: 10px;
+        }
+
+        .about-title {
+            font-size: calc(24px + 0.5vw);
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #000000;
+           
+        }
+
+        .about-quote {
+            font-style: italic;
+            color: #000000;
+            font-weight: 700;
+       
+            font-size: calc(16px + 0.25vw);
+            margin-bottom: 24px;
+        }
+
+        .about-description {
+            color: #000000;
+            font-size: 16px;
+            font-weight: 400;
+          
+            margin-bottom: 32px;
+        }
+
+        .read-more {
+            background: #1a8a71;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: auto;
+        }
+
+        .read-more:hover {
+            background: #157a63;
+        }
+
+        @media (max-width: 768px) {
+            .section-header {
+                font-size: 20px;
+            }
+
+            .about-description {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .aboutcontainer {
+                padding: 20px 15px;
+            }
+
+            .quote-card {
+                padding: 15px;
+            }
+
+            .about-title {
+                font-size: 24px;
+            }
+
+            .about-quote {
+                font-size: 18px;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+     <!--Navbar-->
+     <div class="navbar">
+        <img src="images/humraahi.png" class="logo">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="getinvolved.html">Helpline & Resources</a></li>
+                <li><a href="helpline.html">Get Involved</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="aboutcontainer">
+        <div class="about-section">
+            <div class="about-left">
+                <img src="images/about.png" alt="Hands raised against violence" class="about-image">
+                <div class="quote-card">
+                    <div class="quote-content">
+                        <img src="images/abouta.png" alt="Profile" class="quote-avatar">
+                        <div class="quote-text">
+                            <p>Lorem ipsum dolor sit amet consectetur. Malesuada quisque quisque volutpat a vivamus lacus adipiscing ut nunc. Nulla malesuada lacinia a integer gravida suspendisse adipiscing mattis nibh.</p>
+                            <div class="quote-author">Name</div>
+                            <div class="quote-position">Founder</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right">
+                <div class="section-header">
+                    ABOUT US
+                </div>
+                <h1 class="about-title">Hum Raahi Foundation is a community where all families, regardless of their definition, can live free from violence.</h1>
+                <div class="about-quote">"Empowering Lives, Eradicating Violence."</div>
+                <p class="about-description">At Hum Raahi Foundation, we envision a world where every individual and family can live free from violence and abuse. Dedicated to fighting sexual abuse, we provide advocacy, education, and support to survivors and their loved ones. Our mission is to raise awareness, foster community engagement, and offer essential resources to create a safer, more inclusive society. Together, we are committed to breaking the silence and empowering those affected by abuse to reclaim their lives and thrive in a violence-free environment.</p>
+                <button class="read-more">Read more</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and Social Links Column -->
+                <div class="col-md-3">
+                    <img src="images/humraahi.png" width="155px" height="117px" alt="Hum Raahi Foundation Logo" class="img-fluid mb-2">
+                    <p style="font-size: 20px; line-height: 25.14px; font-weight: 700; color: #000000;">Follow</p>
+                    <div class="social-icons">
+                        <a href="#"  class="fab fa-linkedin"></a>
+                        <a href="#" class="fab fa-youtube"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-facebook"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="col-md-3">
+                    <p class="footercolumn-title">Quick Links</p>
+                    <div class="footerunderline"></div>
+                    <ul class="list-unstyled">
+                        <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="#">Home</a></li>
+                        <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="#">About Us</a></li>
+                        <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+    
+                <!-- About Column -->
+                <div class="col-md-3">
+                    <p class="footercolumn-title">About Humrahi</p>
+                    <div class="footerunderline"></div>
+                    <p style="font-size: 18px; font-weight: 400; line-height: 22.63px;">The Hum Raahi Foundation is dedicated to combating sexual abuse through advocacy, education, and support for survivors. </p>
+                </div>
+    
+                <!-- Contact Info Column -->
+                <div class="col-md-3">
+                    <p class="footercolumn-title">Connect with us</p>
+                    <div class="footerunderline"></div>
+                    <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-phone"></i> 8899776655</p>
+                    <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-globe"></i> www.humraahi.com</p>
+                    <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-map-marker-alt"></i> Address....</p>
+                    <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-envelope"></i> humraahi@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('active');
+    }
+    
+    </script>
+</body>
+</html>

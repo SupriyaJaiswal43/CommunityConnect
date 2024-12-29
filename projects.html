@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUM RAAHI</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+          font-family: 'Merriweather', serif;
+        }
+        .section-title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 2rem;
+          color: #05625C;
+        }
+      
+        .section-content {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin-bottom: 2rem;
+        }
+      
+        .icon-box {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1.5rem;
+        }
+      
+        .icon-box i {
+          font-size: 2rem;
+          color: #05625C;
+          margin-right: 1rem;
+        }
+      
+        .project-image {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 100px;
+        }
+      
+        .project-image img {
+          max-height: 500px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+      
+        .project-image img:hover {
+          transform: scale(1.05);
+        }
+      
+       
+        @media (max-width: 991px) {
+  .container-projects {
+    padding: 0 15px; /* Add some padding on small screens */
+  }
+
+  .project-description-container,
+  .project-image-container {
+    flex: 0 0 100%; /* Full width on mobile */
+    max-width: 100%;
+  }
+
+  .project-description-container {
+    order: 1; /* Ensure text comes before image on mobile */
+  }
+
+  .project-image-container {
+    order: 2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 1.8rem; /* Slightly smaller title */
+    text-align: center; /* Center align titles */
+  }
+
+  .section-content {
+    font-size: 1rem; /* Slightly smaller font size */
+    line-height: 1.5; /* Improved line height for readability */
+    text-align: left; /* Ensure text is left-aligned */
+    padding: 0 10px; /* Add some horizontal padding */
+  }
+
+  .icon-box {
+    align-items: flex-start; /* Align icons to the top */
+    margin-bottom: 1rem;
+  }
+
+  .icon-box i {
+    margin-right: 15px;
+    margin-top: 5px; /* Slight top margin for better alignment */
+  }
+
+  .project-image {
+    margin-left: 0; /* Remove left margin */
+    justify-content: center;
+  }
+
+  .project-image img {
+    max-height: 250px; /* Adjust image height for smaller screens */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure image doesn't overflow */
+  }
+}
+      </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="images/humraahi.png" class="logo">
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">About Us</a>
+                <div class="dropdown-content">
+                    <a href="about-humraahi.html">About Hum Raahi</a>
+                    <a href="vision-mission.html">Our Vision, Mission and Values</a>
+                    <a href="our-story.html">Our Story</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">What We Do</a>
+                <div class="dropdown-content">
+                    <a href="projects.html">Projects</a>
+                    <a href="aids-offered.html">Aids Offered</a>
+                    <a href="facts-figures.html">Facts and Figures</a>
+                </div>
+            </li>
+          
+            <li>
+                <a href="#">Resources and Helpline</a>
+                <div class="dropdown-content">
+                    <a href="article.html">Articles and Blogs</a>
+                    <a href="Helpline.html">Helpline</a>
+                    <a href="events.html">Events</a>
+                </div>
+            </li>
+            <li><a href="volunteer.html">Get Involved</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+</div>
+
+    
+<div class="container-projects my-5">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="row">
+          <div class="col-lg-7 project-description-container">
+            <div class="section-title">Project Kawach</div>
+            <div class="section-content">
+                Our first project, Project Kawach, focuses on child sexual abuse, with a commitment to educating approximately 50,000 children through awareness and prevention programs. We aim to empower children, parents, caregivers, and communities by helping them recognize signs of child sexual abuse, understand boundaries, and adopt safe behaviors. This includes teaching self-defense techniques, helping children differentiate between safe and unsafe touch, encouraging them to assertively refuse inappropriate advances, and building a clear understanding of consent.
+
+                We address the various forms of abuse, including physical, emotional, verbal, and online exploitation, to ensure a comprehensive approach to prevention. Additionally, we advocate for creating safer environments for children by implementing measures such as thorough background checks for individuals working with children, establishing reliable reporting mechanisms, and strengthening community-driven vigilance and support systems. To further support our mission, we provide legal assistance and mental health support to survivors, ensuring they have access to the resources and care they need for recovery and justice.
+            </div>
+          </div>
+          <div class="col-lg-5 project-image-container">
+            <div class="project-image">
+              <img src="images/HRF Website Media/projectkawach.jpg" alt="Project Kawach" class="img-fluid rounded-4 shadow-lg">
+            </div>
+          </div>
+        </div>
+       
+        <div class="section-title mt-4">Our Approach</div>
+        <div class="section-content">
+          <div class="icon-box">
+            <i class="fas fa-user-shield"></i>
+            <div>Providing comprehensive support services for victims and survivors, including counseling, legal advocacy, and access to medical care.</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-handshake"></i>
+            <div>Working closely with stakeholders, including law enforcement, healthcare professionals, and educators, to advocate for stronger protections and legislation against child sexual abuse.</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-users"></i>
+            <div>Empowering communities to take action against child sexual abuse through training, resources, and partnerships with local organizations.</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-chart-line"></i>
+            <div>Conducting ongoing research and evaluation to improve our strategies and ensure they are effective in preventing and responding to child sexual abuse.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+<!--footer-->
+<!--footer-->
+<footer class="footer">
+  <div class="container">
+      <div class="row">
+          <!-- Logo and Social Links Column -->
+          <div class="col-md-3">
+              <img src="images/humraahi.png" width="155px" height="117px" alt="Hum Raahi Foundation Logo" class="img-fluid mb-2">
+              <p style="font-size: 20px; line-height: 25.14px; font-weight: 700; color: #000000;"></p>
+              <div class="social-icons">
+                  <a href="https://www.linkedin.com/company/hum-raahi-foundation/ "  class="fab fa-linkedin"></a>
+                  <a href="#" class="fab fa-youtube"></a>
+                  <a href="#" class="fab fa-twitter"></a>
+                  <a href="#" class="fab fa-facebook"></a>
+                  <a href="https://www.instagram.com/humraahi.foundation/profilecard/?igsh=MWF6NTQ1NmYzOGl4MQ== " class="fab fa-instagram"></a>
+              </div>
+          </div>
+          
+          <!-- Quick Links Column -->
+          <div class="col-md-3">
+              <p class="footercolumn-title">Quick Links</p>
+              <div class="footerunderline"></div>
+              <ul class="list-unstyled">
+                  <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="index.html">Home</a></li>
+                 
+                  <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="about-humraahi.html">About Hum Raahi</a></li>
+             
+                 
+                  <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"> <a href="projects.html">Projects</a></li>
+               
+                    
+                  <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="volunteer.html">Get Involved</li>
+                 
+                      <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;">  <a href="article.html">Articles and Blogs</a></li>
+                    
+          
+                      <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="contactus.html">Contact Us</a></li>
+                
+              </ul>
+          </div>
+
+          <!-- About Column -->
+          <div class="col-md-3">
+              <p class="footercolumn-title">About Hum Raahi</p>
+              <div class="footerunderline"></div>
+              <p style="font-size: 18px; font-weight: 400; line-height: 22.63px;">The Hum Raahi Foundation is dedicated to combating sexual abuse through advocacy, education, and support for survivors. </p>
+          </div>
+
+          <!-- Contact Info Column -->
+          <div class="col-md-3">
+              <p class="footercolumn-title">Connect with us</p>
+              <div class="footerunderline"></div>
+              <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-phone"></i>  7973179768
+              </p>
+              <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-globe"></i> www.humraahi.foundation.com</p>
+              <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-map-marker-alt"></i>94 c Manas City Indira Nagar Lucknow
+              </p>
+              <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-envelope"></i>humraahi22@gmail.com 
+              </p>
+          </div>
+      </div>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.querySelector('.menu-icon');
+  const menu = document.querySelector('.menu');
+  const dropdownItems = document.querySelectorAll('.navbar ul li');
+  
+  // Toggle menu on icon click
+  menuIcon.addEventListener('click', function() {
+      this.classList.toggle('active');
+      menu.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // Handle dropdowns and links
+  dropdownItems.forEach(item => {
+      const link = item.querySelector('a');
+      const dropdownContent = item.querySelector('.dropdown-content');
+      
+      if (dropdownContent) {
+          // Toggle dropdown on mobile devices
+          link.addEventListener('click', (e) => {
+              if (window.innerWidth <= 1024) {
+                  e.preventDefault();
+                  item.classList.toggle('active');
+                  
+                  // Close other open dropdowns
+                  dropdownItems.forEach(otherItem => {
+                      if (otherItem !== item) {
+                          otherItem.classList.remove('active');
+                      }
+                  });
+              }
+          });
+      }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+      if (window.innerWidth <= 1024) {
+          if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
+              menu.classList.remove('active');
+              menuIcon.classList.remove('active');
+              document.body.style.overflow = '';
+              dropdownItems.forEach(item => item.classList.remove('active'));
+          }
+      }
+  });
+
+  // Reset on window resize
+  window.addEventListener('resize', function() {
+      if (window.innerWidth > 1024) {
+          menu.classList.remove('active');
+          menuIcon.classList.remove('active');
+          document.body.style.overflow = '';
+          dropdownItems.forEach(item => item.classList.remove('active'));
+      }
+  });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUM RAAHI</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        :root {
+    --primary-color: #05625C;
+    --secondary-color: #05625C;
+    --accent-color: #4CAF50;
+    --text-light: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+        body {
+            background-color: #f4f6f9;
+        
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .section-card:hover {
+            transform: scale(1.03);
+        }
+        .section-title {
+            background-color: #05625C;
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .topic-list {
+            padding: 15px;
+        }
+        .topic-btn {
+            margin: 5px;
+            text-align: left;
+            width: 100%;
+            color: #000000;
+        }
+        #content-area {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .highlight {
+            color: #009688;
+            font-weight: bold;
+        }
+        .icon {
+            color: #009688;
+            margin-right: 5px;
+        }
+        h4 {
+            color: #009688;
+            margin-bottom: 10px;
+        }
+        .topic-btn:hover {
+        background-color: #009688 !important;
+        color: white !important;
+    }
+    
+/* Updated container classes */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.content-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Updated hero section */
+.banner-main {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-light);
+    padding: 6rem 0;
+    margin-bottom: 3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.banner-main h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner-main p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+/* Updated navigation */
+.tab-menu {
+    background: white;
+    border-radius: 50px;
+    padding: 0.5rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tab-list {
+    border-radius: 50px;
+    background: #f8f9fa;
+    padding: 0.5rem;
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab-item {
+    margin: 0 0.25rem;
+}
+
+/* Updated nav links */
+.tab-button {
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.tab-button:hover {
+    background: rgba(107, 72, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.tab-button.active {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+/* Content sections */
+.section-block {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.feature-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-inner {
+        padding: 1rem;
+    }
+    
+    .banner-main {
+        padding: 4rem 0;
+        clip-path: none;
+    }
+    
+    .banner-main h1 {
+        font-size: 2.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/humraahi.png" class="logo">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="about-humraahi.html">About Hum Raahi</a>
+                        <a href="vision-mission.html">Our Vision, Mission and Values</a>
+                        <a href="our-story.html">Our Story</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">What We Do</a>
+                    <div class="dropdown-content">
+                        <a href="projects.html">Projects</a>
+                        <a href="aids-offered.html">Aids Offered</a>
+                        <a href="facts-figures.html">Facts and Figures</a>
+                    </div>
+                </li>
+              
+                <li>
+                    <a href="#">Resources and Helpline</a>
+                    <div class="dropdown-content">
+                        <a href="article.html">Articles and Blogs</a>
+                        <a href="Helpline.html">Helpline</a>
+                        <a href="events.html">Events</a>
+                    </div>
+                </li>
+                <li><a href="volunteer.html">Get Involved</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner-main">
+        <div class="content-wrapper">
+            <h1 class="display-4 text-center mb-4">
+                <i class="fas fa-shield-alt me-3"></i>Educational Resource Center
+            </h1>
+            <p class="lead text-center">Understanding, Prevention, and Support Resources</p>
+        </div>
+    </div>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="section-card" id="education-section">
+                    <div class="section-title">
+                        <h3><i class="fas fa-graduation-cap"></i>&nbsp;Education and Awareness</h3>
+                    </div>
+                    <div class="topic-list">
+                        <button class="btn btn-outline-success topic-btn" data-section="education" data-topic="types-of-abuse"> <i class="fas fa-book-open" style="color: #009688;"></i>&nbsp; Understanding Types of Sexual Abuse: Definitions and Examples</button>
+                        <button class="btn btn-outline-success topic-btn" data-section="education" data-topic="child-abuse-persuasion">    <i class="fas fa-child" style="color: #009688;"></i>&nbsp;Child Sexual Abuse- Ways in which child can be persuaded into it. </button>
+                        <button class="btn btn-outline-success topic-btn" data-section="education" data-topic="abuse-settings"><i class="fas fa-map-marker-alt" style="color: #009688;"></i>&nbsp; Places where child abuse can happen, People who can be involved</button>
+                        <button class="btn btn-outline-success topic-btn" data-section="education" data-topic="parent-strategies"><i class="fas fa-users" style="color: #009688;"></i>&nbsp;Strategies for Parents and Caregivers to Create a Safe and Supportive Environment</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="section-card" id="legal-section">
+                    <div class="section-title">
+                        <h3><i class="fas fa-balance-scale"></i>&nbsp;Legal Rights and Resources</h3>
+                    </div>
+                    <div class="topic-list">
+                        <button class="btn btn-outline-success topic-btn" data-section="legal" data-topic="rape-victim-rights">  <i class="fas fa-gavel" style="color: #009688;"></i>&nbsp; Six Important Rights of Rape Victims</button>
+                        <button class="btn btn-outline-success topic-btn" data-section="legal" data-topic="pocso"> <i class="fas fa-file-alt" style="color: #009688;"></i>&nbsp;Provisions of POCSO</button>
+                        <button class="btn btn-outline-success topic-btn" data-section="legal" data-topic="ipc-sections"> <i class="fas fa-book" style="color: #009688;"></i>&nbsp;IPC Sections</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="section-card" id="mental-health-section">
+                    <div class="section-title">
+                        <h3><i class="fas fa-heartbeat"></i>&nbsp; Mental Health and Well-Being</h3>
+                    </div>
+                    <div class="topic-list">
+                        <button class="btn btn-outline-success topic-btn" data-section="mental-health" data-topic="trauma-signs"> <i class="fas fa-brain" style="color: #009688;"></i>&nbsp; Recognizing Signs of Trauma in Children: Educating caregivers on the signs of trauma and how to respond effectively.</button>
+                        <button class="btn btn-outline-success topic-btn" data-section="mental-health" data-topic="emotional-reactions"> <i class="fas fa-smile" style="color: #009688;"></i>&nbsp;Common Emotional Reactions to Abuse: Explaining feelings like fear, anger, guilt, and shame, and reassuring victims that these reactions are normal.</button>
+                        <button class="btn btn-outline-success topic-btn" data-section="mental-health" data-topic="flashbacks-nightmares">    <i class="fas fa-moon" style="color: #009688;" ></i>&nbsp;Dealing with Flashbacks and Nightmares: Strategies to Handle Distressing Memories and Improve Sleep Quality</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div id="content-area">
+                    <h3 id="content-title" class="mb-3">Select a Topic</h3>
+                    <div id="content-body">
+                        <p>Click on any topic to view its detailed information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and Social Links Column -->
+                <div class="col-md-3">
+                    <img src="images/humraahi.png" width="155px" height="117px" alt="Hum Raahi Foundation Logo" class="img-fluid mb-2">
+                    <p style="font-size: 20px; line-height: 25.14px; font-weight: 700; color: #000000;"></p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/company/hum-raahi-foundation/ "  class="fab fa-linkedin"></a>
+                        <a href="#" class="fab fa-youtube"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-facebook"></a>
+                        <a href="https://www.instagram.com/humraahi.foundation/profilecard/?igsh=MWF6NTQ1NmYzOGl4MQ== " class="fab fa-instagram"></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="col-md-3">
+                    <p class="footercolumn-title">Quick Links</p>
+                    <div class="footerunderline"></div>
+                    <ul class="list-unstyled">
+                        <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="index.html">Home</a></li>
+                       
+                        <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="about-humraahi.html">About Hum Raahi</a></li>
+                   
+                       
+                        <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"> <a href="projects.html">Projects</a></li>
+                     
+                          
+                        <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="volunteer.html">Get Involved</li>
+                       
+                            <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;">  <a href="article.html">Articles and Blogs</a></li>
+                          
+                
+                            <li style="font-weight: 700; font-size: 18px; line-height: 22.63px;color: #000000;"><a href="contactus.html">Contact Us</a></li>
+                      
+                    </ul>
+                </div>
+    
+                <!-- About Column -->
+                <div class="col-md-3">
+                    <p class="footercolumn-title">About Hum Raahi</p>
+                    <div class="footerunderline"></div>
+                    <p style="font-size: 18px; font-weight: 400; line-height: 22.63px;">The Hum Raahi Foundation is dedicated to combating sexual abuse through advocacy, education, and support for survivors. </p>
+                </div>
+    
+                <!-- Contact Info Column -->
+                <div class="col-md-3">
+                    <p class="footercolumn-title">Connect with us</p>
+                    <div class="footerunderline"></div>
+                    <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-phone"></i>  7973179768
+                    </p>
+                    <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-globe"></i> www.humraahi.foundation.com</p>
+                    <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-map-marker-alt"></i>94 c Manas City Indira Nagar Lucknow
+                    </p>
+                    <p style="font-weight: 700; font-size: 18px; line-height: 22.63px; color: #000000;"><i class="fas fa-envelope"></i>humraahi22@gmail.com 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.querySelector('.menu-icon');
+        const menu = document.querySelector('.menu');
+        const dropdownItems = document.querySelectorAll('.navbar ul li');
+        
+        // Toggle menu on icon click
+        menuIcon.addEventListener('click', function() {
+            this.classList.toggle('active');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        });
+    
+        // Handle dropdowns and links
+        dropdownItems.forEach(item => {
+            const link = item.querySelector('a');
+            const dropdownContent = item.querySelector('.dropdown-content');
+            
+            if (dropdownContent) {
+                // Toggle dropdown on mobile devices
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                        
+                        // Close other open dropdowns
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 1024) {
+                if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
+                    menu.classList.remove('active');
+                    menuIcon.classList.remove('active');
+                    document.body.style.overflow = '';
+                    dropdownItems.forEach(item => item.classList.remove('active'));
+                }
+            }
+        });
+    
+        // Reset on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024) {
+                menu.classList.remove('active');
+                menuIcon.classList.remove('active');
+                document.body.style.overflow = '';
+                dropdownItems.forEach(item => item.classList.remove('active'));
+            }
+        });
+    });
+    
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Content mapping
+        const contentMap = {
+            education: {
+                'types-of-abuse': `
+                    <h4><i class="fas fa-info-circle icon"></i> Understanding Types of Sexual Abuse: Definitions and Examples</h4>
+                    <p><b class="highlight">What is Sexual Abuse?</b><br/>
+Sexual abuse is any nonconsensual or exploitive sexual behavior or activity imposed on an individual without their consent”, as defined by APA (American Psychological Association). According to the World Health Organization (WHO), sexual abuse involves "actual or threatened physical intrusion of a sexual nature, whether by force or under unequal or coercive conditions."
+Sexual abuse can be contact and non-contact, which can happen in-person or online. 
+</p>
+                    <ul>
+                        <li><i class="fas fa-child icon"></i><b class="highlight">Child Sexual Abuse (CSA)</b><br/>
+                            <p>
+                                Child Sexual Abuse (CSA) refers to any sexual activity involving a child, perpetrated by an adult or another child who is in a position of power or control over the victim. This abuse can include both physical contact and non-contact activities. The power imbalance inherent in these interactions is a crucial factor, as the abuser often uses their authority or influence to exploit the child. Examples of CSA include fondling, molestation, rape, exploitation through pornography, and forcing the child to witness sexual acts.
+                                </p></li>
+                        <li><i class="fas fa-user-shield icon"></i><b class="highlight">Adult Sexual Abuse</b><br/>
+                            <p>
+                                Adult Sexual Abuse involves any non-consensual sexual act or behavior directed towards an adult. This abuse can occur in various contexts, including interactions with strangers, acquaintances, or intimate partners. The key aspect of this abuse is the lack of consent and the use of force, coercion, or manipulation. This abuse can manifest as rape, sexual assault, groping, forced kissing, or coerced nudity.
+                                </p></li>
+                        <li><i class="fas fa-users icon"></i><b class="highlight">Incest</b><br/>
+                            <p>Incest involves sexual activities between family members who are legally prohibited from marrying each other. This type of abuse is characterized by a significant power dynamic and manipulation, where the abuser often exploits familial relationships to perpetrate the abuse. This includes sexual acts between parents and children, siblings, or other close relatives. </p></li>
+                        <li><i class="fas fa-hands-helping icon"></i> <b class="highlight">Sexual Harassment</b><br/>
+                            <p>Sexual Harassment refers to unwelcome sexual advances, requests for sexual favors, and other verbal or physical harassment of a sexual nature in various settings. This abuse can occur in workplaces, educational institutions, or other public environments. It can involve inappropriate comments, unwanted touching, suggestive gestures, and pressure for sexual favors.</p></li>
+                            <li><i class="fas fa-globe icon"></i><b class="highlight">Exploitation and Trafficking</b><br/>
+                                <p>Exploitation and Trafficking involve forcing individuals into sexual acts for money, drugs, or other benefits. This includes pornography, and human trafficking for sexual purposes, often facilitated through manipulation, threats, or violence.
+                                    </p></li>
+                        <li><i class="fas fa-globe icon"></i><b class="highlight">Online Sexual Abuse</b><br/>
+                            <p>Online Sexual Abuse refers to sexual exploitation or abuse occurring over the internet, including through social media, messaging apps, and other online platforms. It encompasses sextortion, sharing intimate images without consent, grooming, and cyberstalking.</p></li>
+                            <li><b class="highlight">Non-Contact Sexual Abuse
+</b><br/>
+                                <p>Non-Contact Sexual Abuse involves sexually abusive behaviors that do not require physical contact. This includes actions such as indecent exposure, voyeurism, and making someone watch or listen to sexual acts without their consent. It also encompasses sending unsolicited sexual content. Although physical contact may not be involved, these behaviors still inflict significant emotional and psychological harm.</p></li>
+                    </ul>
+                `,
+                'child-abuse-persuasion': `
+                    <h4><i class="fas fa-info-circle icon"></i>  Understanding Child Sexual Abuse: How Children Are Persuaded and Exploited</h4>
+                    <br/>
+<p>Child Sexual Abuse (CSA) is a grave violation where a child is exploited for sexual purposes by an adult or another child in a position of power. Abusers often employ various manipulative tactics to persuade or coerce children into sexual activities. Let’s understand these methods together:</p>
+                    <ol>
+                        <li><b class="highlight"><i class="fas fa-handshake icon"></i> Grooming:</b><br/>
+                            <p>Grooming is a process where an abuser builds a trusting relationship with a child to gain their compliance. This may involve giving gifts, showing special attention, and creating a sense of dependency. For instance, an abuser might offer a child expensive gifts or exclusive privileges to create a bond and then exploit that trust.</p></li>
+                  <li><b class="highlight"><i class="fas fa-heart-broken icon"></i>  Manipulation and Emotional Coercion:</b><br/><p> Abusers often manipulate children emotionally by creating a sense of guilt, fear, or obligation. They may use statements like “If you loved me, you would do this” or threaten to harm themselves or the child’s loved ones if the child does not comply. This emotional pressure can make it difficult for the child to resist or disclose the abuse.</p></li>
+<li><b class="highlight"> <i class="fas fa-eye icon"></i>Desensitization:</b><br/><p> Abusers may gradually introduce inappropriate behavior in a non-threatening manner to desensitize the child. This could start with seemingly innocent physical contact, like hugging or tickling, which gradually becomes more invasive. The aim is to normalize such behavior and make the child less likely to recognize or resist more severe abuse.</p></li>
+<li><b class="highlight"> Exploitation of Vulnerabilities:</b><br/><p> Abusers often target children who are vulnerable due to factors such as neglect, low self-esteem, or isolation. They may use these vulnerabilities to manipulate and exploit the child. For example, an abuser might prey on a child who is lonely or seeking attention, offering companionship and understanding while simultaneously engaging in abusive behavior.</p></li>
+<li><b class="highlight"> Use of Authority and Power:</b><br/><p> Abusers in positions of authority, such as teachers, coaches, or family members, may exploit their power to control or coerce children into sexual activities. They may use their authority to intimidate the child or promise rewards for compliance. An example could be a coach who threatens to bench a child from a sports team unless the child engages in sexual activities.</p></li>
+<li><b class="highlight"> Threats and Intimidation:</b><br/><p> Some abusers use threats or intimidation to enforce compliance. This might include threats of violence against the child or their loved ones, or threats of retaliation if the child discloses the abuse. The fear instilled by these threats can prevent the child from seeking help or reporting the abuse.</p></li>
+     
+                    </ol>
+                    <p>Recognizing these tactics is essential for safeguarding children. Educators, parents, and caregivers must be vigilant for signs of grooming or manipulation and create environments where children feel safe to discuss their concerns. Early intervention and education can significantly reduce the risk of child sexual abuse and provide protection for vulnerable children.
+</p>
+                `,
+                'abuse-settings': `
+                    <h4><i class="fas fa-info-circle icon"></i> Common Settings and Perpetrators of Child Abuse </h4>
+                    <p>Child abuse is a serious issue that can occur in various settings and involve individuals who may seem trustworthy. Often, abuse happens in places where children should feel safe, such as their own homes. Family members, including parents and relatives, can be perpetrators of abuse, exploiting the trust and emotional bonds they share with the child. Educational environments are another area where abuse can occur, with teachers, school staff, or even fellow students potentially being involved. The authority figures in these settings can sometimes misuse their power, making it difficult for children to speak out.
+</p>
+                <p>In addition to homes and schools, other settings like sports activities and community centers can also be venues for abuse. Coaches and community leaders may take advantage of their positions to exploit children. The online world has also become a space where abuse can occur, with predators using social media, chat rooms, and other digital platforms to groom and exploit children. </p>
+                <p>Recognizing that abuse can occur in various settings and involve a wide range of individuals highlights the importance of maintaining personal boundaries and knowing when to take action. While it’s essential to be aware that abuse can happen anywhere and can involve anyone, being informed about protective strategies and having the confidence to say no is important. Awareness and preventive measures cannot eliminate the risk entirely, but they play a significant role in creating safer environments and ensuring children feel supported and protected.</p>
+                `,
+                'parent-strategies': `
+                    <h4><i class="fas fa-info-circle icon"></i> Strategies for Parents and Caregivers to Create a Safe and Supportive Environment:
+</h4>
+                    <ol>
+                    <li><b class="highlight">Foster Open Communication:</b><br/><p>Create a home environment where your child feels comfortable sharing their thoughts and feelings. Let them know they can talk to you about anything without fear of judgment.</p></li>
+<li><b class="highlight">Educate About Personal Boundaries:</b><br/><p> Teach your child about personal space and boundaries in a way that they can understand. Explain what constitutes appropriate and inappropriate behavior.</p></li>
+<li><b class="highlight">Be Involved:</b><br/><p> Stay actively engaged in your child’s life by knowing who their friends are, what they are doing, and where they are spending their time. This includes monitoring their online activities and interactions.</p></li>
+<li><b class="highlight">Encourage Trust:</b><br/><p> Help your child understand that they should always trust their instincts and speak up if something feels wrong. Reassure them that they have the right to say no to any unwanted contact.</p></li>
+<li><b class="highlight">Monitor Digital Activity:</b><br/><p> Regularly review and discuss the content your child is accessing online. Set appropriate privacy settings and guide them on safe internet use.</p></li>
+<li><b class="highlight">Build a Supportive Network:</b><br/><p> Encourage participation in community and school programs focused on safety and prevention. Engaging in these activities can provide additional layers of protection and education.</p></li>
+<li><b class="highlight">Listen and Validate:</b><br/><p> Always listen to your child’s concerns and validate their feelings. If they express discomfort about a person or situation, take their feelings seriously and act accordingly.</p></li>
+<li><b class="highlight">Be Proactive:</b><br/><p> Take part in awareness programs and support organizations that work towards preventing child abuse. Your involvement helps build a safer community for everyone.</p></li>
+<li><b class="highlight">Create Safe Spaces:</b><br/><p> Ensure that your child has safe spaces where they feel secure, whether at home or in other environments. Avoid leaving them in situations where they feel uneasy.</p></li>
+<li><b class="highlight">Act on Concerns: </b><br/><p>If you suspect any form of abuse, act promptly by reporting it to the appropriate authorities. Taking swift action can prevent further harm and ensure your child’s safety.</p></li>
+                    </ol>
+                `
+            },
+            legal: {
+                'rape-victim-rights': `
+                    <h4><i class="fas fa-info-circle icon"></i> Six Important Rights of Rape Victims</h4>
+                    <ol>
+                        <li><b class="highlight"> Right to Zero FIR</b><br/><p>
+
+It means that a person can file an FIR in any police station, irrespective of the place of incident of the Jurisdiction. The same FIR later shall be transferred to the police station, having jurisdiction for the investigation to begin. Suppose, if a girl got raped by someone in Haryana and she didn't tell anyone about that incident and came to Mumbai. Now if she wants to file an FIR against that rapist, she can directly go to any police station in Mumbai and can file FIR against that person. The same FIR shall be transferred by the Mumbai police to Haryana Police. This is known as Zero FIR. The concept of Zero FIR has come into force after Nirbhaya Case. The Committee of Justice Verma has introduced the concept of Zero FIR in their report findings. The Ministry of Home Affairs had also introduced Advisory Circular dated 10-05-2013 of Home Affairs for Zero FIR</p></li>
+
+<li><b class="highlight"> Free medical treatment in any private hospital</b><br/><p>
+
+According to Section 357C of Code of Criminal Procedure, no private or government hospital can charge fees for the treatment of rape victims. All hospitals, either private or public, shall immediately provide first aid to the victims free of cost. If any of the hospitals demand a fee for the treatment of rape victims, then they shall be punished under Section 166B of the Indian Penal Code (non-treatment of the victim) for up to 1 year and shall be liable for a fine or both.</p></li>
+
+<li><b class="highlight"> No two-finger test during the medical examination</b><br/><p>
+
+No doctor shall possess the right to do two-finger tests while doing the medical examination. According to Section 164A of the Code of Criminal Procedure, this provision tells how the report will be made and what things will be written under the report. The Supreme Court itself supported this ruling in the case of Lillu Alias Rajesh and Another vs State of Haryana[4] and stated that Two finger test and its interpretation violates the right of rape survivors to privacy, mental integrity and dignity. Hence, it is illegal.</p></li>
+
+<li><b class="highlight">Harassment free and time-bound police investigation</b><br/><p>
+
+According to Section 154 (1) CrPC, the statement shall be recorded by a woman police officer or any other officer. The officer will come as per the time decided by you or favorable to you. And they shall fix the place as per your convenience. The woman officer shall record the statement in the victim's presence's parents or guardian. A magistrate shall record the statement as per Section 164 (5-A). The lady police officer shall take the victim in court and the statement shall be recorded in the chamber of Magistrate. The purpose for doing the same is to check the statement noted by the police is correct or not.</p></li>
+
+<li><b class="highlight">Trial with full dignity, speedy and protection</b><br/><p>
+
+Section 26 of CrPC states that the trial shall be practicable by the court presided over by a woman. Further, no question shall be asked to victim that assassinates the character of her. Section 53A of the Indian Evidence Act states any question pertaining to previous sex history is irrelevant.<br/>
+
+Section 327(2) of CrPC defines the inquiry and trial of rape shall be conducted on camera.<br/>
+
+Section 327(3) of CrPC states that the statement given by the victim to the magistrate shall be confidential.<br/>
+
+Section 173(1A) of CrPC state that investigation shall be completed within two months from the date on which the information was recorded.</p></li>
+
+<li><b class="highlight">Right to compensation</b><br/><p>
+A new provision has been introduced as Section 357A of Code of Criminal Procedure, which states the victim compensation scheme. The Supreme Court has laid this provision down for framing a scheme for compensation with Nipun Saxena vs Union of India. Keeping this in mind, National Legal Services Authority made the rules for compensation scheme for women victims.</p></li>
+
+                    </ol>
+                `,
+                'pocso': `
+                    <h4><i class="fas fa-info-circle icon"></i> Provisions of POCSO</h4>
+                    <ul>
+                        <li><b class="highlight">Protection of Children from sexual offenses (POCSO) Act , 2012 </b><br/><p>The act was  enacted to protect children against sexual offenses. Under POCSO a child means any person below the age of 18 years irrespective of gender. It not only punishes the offender irrespective of gender but also provides support to victims. There are 3 broad categories of sexual offenses punishable given under POCSO includes sexual harassment, sexual assault and using child for pornography.</p></li>
+                        <li>1)  As soon as the matter is reported to the police officer, within 24 hours, the case should be presented before the Child Welfare Committee.
+</li>
+                        <li>2)  The statement of the minor should be recorded in his or her home or his or her favorite place only by a female police officer.</li>
+                        <li>3)   This act also provides a speedy trial and in camera proceedings to ensure confidentiality.</li>
+                        <li>
+4)   The minor should not be called in the court repeatedly. He or she may be testified through video from home.
+</li>
+                        <li>5)  The medical examination must be conducted by a female doctor, in the presence of a person whom the minor trusted. Consent of the parents or guardians if present, otherwise the consent of a medical professional on the behalf of a minor is required.</li>
+                        <li>6)  The defense should route all the questions through the judge and cannot ask any aggressive or character assassination questions to the juvenile.</li>
+                        <li>7)  The minor should not be exposed to the accused in any way during the recording of evidence.
+</li>
+                    </ul>
+                `,
+                'ipc-sections': `
+                    <h4><i class="fas fa-info-circle icon"></i> Sections under Bhartiya nyaya sanhita(BNS)  formerly known IPC </h4>
+                    <ul>
+                        <li><b class="highlight">Section 354:-</b><br/>
+                            <p> Assault to women with the intent to outrage her modesty</p><br/>
+                     <b class="highlight"> Punishment </b>-<p> imprisonment for 1-5 years + fine</p><br/>
+
+<p>It includes sub section 354A to 354D</p> <br/>
+<p>Section 354 A deals with Sexual Harassment and punishment for sexual harassment. </p><br/>
+<p>Section 354 B deals with Assault to women with intent to disrobe or compelling her to naked  </p><br/>
+<p>Section 354 C deals with Voyeurism i.e. Any man who watches, or captures the image of a woman engaging in a private act.  </p><br/>
+<p>Section 354 D deals with acts of stalking i.e. following a woman, or monitors their use of the internet.  </p><br/></li>
+                        <li><b class="highlight">Section 375:</b><br/><p> This section of IPC deals with Rape of a woman or penetration of penis or any other object without the will of the woman and also specifies some other criterias that are considered as rape and others which are not considered as Rape. </p></li>
+                        <li>Section 376:</b><br/><p> This section deals with the punishment for Rape which shall not be less than 10 years and can extend to imprisonment for life along with fine depends on who committed the crime, the age of the victim and the brutality of the crime being committed.</p>  </li>
+                        <li>Section 377:</b><br/><p>  Deals with unnatural offenses i.e. Whoever voluntarily has carnal intercourse against the order of nature with any man, woman or animal, shall be punished.</p>  </li>
+                    </ul>
+                `
+            },
+            'mental-health': {
+                'trauma-signs': `
+                    <h4><i class="fas fa-info-circle icon"></i> Recognizing Signs of Trauma in Children: Educating caregivers on the signs of trauma and how to respond effectively.</h4><br/>
+                    <p>Trauma can profoundly affect children, manifesting in various behavioral and emotional changes. Understanding these signs is very important for caregivers, educators, and professionals to provide timely support and intervention. Here are some common indicators of trauma in children:</p><br/>
+                    <h5>Behavioral Changes</h5>
+                    <ul>
+                        <li><b class="highlight">Increased Silence or Withdrawal:</b><br/><p> The child may become quiet, avoid conversation, or isolate themselves from family and friends.</p></li>
+<li><b class="highlight">Changes in Social Interactions:</b><br/><p>  A previously social child may start spending more time alone, avoiding interactions with peers, or showing reluctance to engage in activities they once enjoyed.</p></li>
+<li><b class="highlight">Unusual Behavior:</b><br/><p>  Changes in behavior, such as aggressive outbursts or hyperactivity, may signal underlying distress.</p></li>
+<li><b class="highlight">Unusual Play in Older Children:</b><br/><p>  In children older than 6 years, repetitive play may occur, where themes or aspects of the traumatic event are expressed.</p></li>
+<li><b class="highlight">Nightmares and Distressing Dreams:</b><br/><p>  Recurrent distressing dreams related to the traumatic event may occur, often disturbing the child’s sleep.</p></li>
+<li><b class="highlight">Avoidance Behaviors: </b><br/><p> They may avoid external reminders such as people, places, or activities associated with the trauma.</p></li>
+
+                    </ul>
+                    <h5>Emotional Reactions</h5>
+                    <p>Trauma often brings about intense emotional responses. Children might experience:</p><br/>
+                    <ul>
+                        <li><b class="highlight">Anxiety and Fear:</b><br/><p> Persistent worries, fears of the dark, or anxiety about being separated from caregivers can indicate trauma.</p></li>
+<li><b class="highlight">Mood Swings and Irritability:</b><br/><p> Sudden changes in mood, increased irritability, or outbursts of anger can be signs of emotional turmoil.</p></li>
+<li><b class="highlight">Feelings of Guilt or Shame:</b><br/><p> The child might express feelings of guilt or shame about the traumatic event, even if these feelings are misplaced.</p></li>
+<li><b class="highlight">Detachment:</b><br/><p> The child may feel estranged from others, leading to a sense of isolation.</p></li>
+                    </ul>
+                       <h5>Cognitive and Academic Impact</h5>
+                  <p>Trauma can also affect a child’s cognitive functions and academic performance:</p><br/>
+                       <ul>
+                       <li><b class="highlight">Decline in Academic Performance: </b><br/><p>A drop in grades, lack of concentration, or disengagement from schoolwork may occur.
+</p></li>
+                         <li><b class="highlight">Difficulty Concentrating:</b><br/><p>Trouble focusing on tasks or following instructions can be a sign of underlying trauma.
+</p></li>
+                           <li><b class="highlight">Dissociative Reactions: </b><br/><p>The child may experience flashbacks, where they feel or act as if the traumatic event is recurring</p></li>
+                             <li><b class="highlight">Negative Self-Perception: </b><br/><p>Trauma can lead to persistent negative beliefs about oneself, others, or the world, such as "I am bad" or "The world is dangerous."</p></li>
+                        </ul>
+                          <h5>Physical Symptoms</h5>
+                 <p>Trauma can also manifest through physical symptoms:</p><br/>
+                 <ul>
+                    <li><b class="highlight">Sleep Disturbances:</b><br/><p>Nightmares, difficulty falling asleep, or frequent waking during the night are common among traumatized children.
+</p></li>
+<li><b class="highlight">Somatic Complaints:</b><br/><p> Complaints of physical ailments, such as headaches or stomach aches, without a clear medical cause, can be related to emotional distress.</p></li>
+
+                    </ul>
+                    <p>Recognizing these signs is the first step in addressing and supporting a child who may be struggling with trauma. Early intervention can significantly impact a child’s healing process and overall well-being. If you suspect a child is experiencing trauma, it is essential to seek professional help and create a supportive environment where they feel safe and understood.</p><br/>
+                `,
+
+                'emotional-reactions': `
+                    <h4><i class="fas fa-info-circle icon"></i> Common Emotional Reactions to Abuse</h4>
+                    <p>Experiencing abuse, especially during childhood, leaves deep emotional scars that manifest in various ways. Negative emotions such as fear, anger, guilt, shame, and persistent sadness are natural responses to trauma. These emotions are the body’s way of responding to what has happened, and repressing or denying them can lead to further issues in the future, affecting various aspects of life. It may be tough to understand and label these emotions, but recognizing them is the first step toward healing. If you notice these signs, don’t hesitate to seek help, no matter how long ago the trauma occurred or how intense it was. Let’s address these emotions together:</p><br/>
+                    <ul>
+            <li><b class="highlight">Fear</b><br/><p>
+Fear is one of the most immediate and overwhelming emotions that arise from abuse. Children may develop a heightened sense of fear, not just towards the abuser but also in everyday situations. This fear may take the form of anxiety, making it difficult for the child to engage in normal activities, such as going to school, playing with friends, or even sleeping alone. Over time, this fear can generalize, leading to an ongoing sense of dread and insecurity.</p></li>
+ <li><b class="highlight">Anger</b><br/><p>
+Anger is another common response, often directed inward or outward. A child might feel intense anger towards the abuser, their family, or themselves. This anger can manifest as irritability, aggressive behavior, or even self-destructive actions. It's essential to acknowledge this anger as a valid emotion and work through it constructively, allowing the child to express it in a safe and supportive environment.</p></li>
+ <li><b class="highlight">Guilt</b><br/><p>
+Many victims of abuse, particularly children, mistakenly believe that they are somehow responsible for the abuse they endured. This misplaced guilt can be incredibly damaging, leading to a sense of unworthiness and self-blame. Children might think, "If only I had done something differently, this wouldn't have happened." It's important to reassure them that the abuse was not their fault, and they are not to blame for the actions of others.</p></li>
+ <li><b class="highlight">Shame</b><br/><p>
+Shame is closely tied to guilt but carries a deeper sense of personal failure. Children may feel ashamed of what happened to them, fearing judgment from others if the truth comes out. This shame can be isolating, making it difficult for them to seek help or talk about their experiences. It’s important to help children understand that what happened to them does not define their worth and that they have nothing to be ashamed of.</p></li>
+ <li><b class="highlight">Persistent Sadness</b><br/><p>
+Persistent sadness, or a deep sense of hopelessness, is another common emotional reaction to abuse. Children may feel overwhelmed by a sense of despair, leading to prolonged periods of sadness that can interfere with their daily lives. This sadness might manifest as a lack of interest in activities they once enjoyed, difficulty in finding joy, or a general sense of emptiness. Recognizing and addressing this persistent sadness is crucial in helping victims move towards healing.</p></li>
+ <li><b class="highlight">Recognizing and Addressing Emotional Reactions</b><br/><p>
+These emotional reactions—fear, anger, guilt, and shame—are natural responses to the trauma of abuse. They are not signs of weakness or failure but rather indicators of the deep impact the abuse has had. Understanding these emotions is the first step towards healing.<br/>
+At Hum Raahi Foundation, we provide a safe space for victims to explore these emotions without judgment. Our team of mental health professionals is trained to support victims through these challenging feelings, helping them to process their trauma and begin the journey towards recovery.</p></li>
+ <li><b class="highlight">Reassurance and Support</b><br/><p>
+Healing from abuse is a long and complex process, but it begins with understanding and accepting one's emotions. We encourage victims to talk about their feelings openly, whether through therapy, support groups, or with trusted family members. By acknowledging these emotions, victims can begin to reclaim their lives, knowing that they are not alone in their experiences.</p></li>
+
+                    </ul><br/>
+                    <p>With the right support, these emotions can be managed and eventually overcome, leading to a stronger, more resilient sense of self.</p>
+                `,
+                'flashbacks-nightmares': `
+                    <h4><i class="fas fa-info-circle icon"></i> Dealing with Flashbacks and Nightmares: Strategies to Handle Distressing Memories and Improve Sleep Quality
+</h4><br/>
+<p>Experiencing flashbacks and nightmares is a common response to trauma, particularly in cases of abuse. These distressing memories can resurface unexpectedly, causing emotional turmoil and significantly disrupting sleep quality. It’s important to understand that these experiences are a normal part of the healing process, but they can be challenging to cope with. The good news is that there are effective strategies to manage these symptoms, allowing individuals to regain control over their lives and improve their well-being.</p><br/>
+<h5>Understanding Flashbacks and Nightmares</h5><br/>
+<p>    Flashbacks are vivid, intrusive memories of traumatic events that can make a person feel as though they are reliving the experience. These episodes can be triggered by anything that reminds the individual of the trauma, such as sights, sounds, or even smells. Nightmares, on the other hand, are distressing dreams that often involve elements of the trauma and can cause intense fear, anxiety, and a disrupted sleep cycle.</p><br/>
+<p>   Both flashbacks and nightmares are the mind's way of processing trauma, but they can leave individuals feeling overwhelmed and exhausted. It’s important to acknowledge these experiences and find ways to manage them effectively.</p><br/>
+<h5>  Strategies to Manage Flashbacks and Nightmares</h5><br/>           
+<ol>
+                      <li><b class="highlight"> Creating a Safe Sleep Environment:</b><br/><p> Improving sleep quality begins with creating a safe and calming environment. This includes keeping the bedroom cool and dark, using a weighted blanket for comfort, and practicing relaxation techniques before bed. Establishing a bedtime routine that involves activities like reading, listening to soothing music, or meditating can also promote better sleep.</p></li>
+<li><b class="highlight"> Mindfulness and Relaxation Exercises:</b><br/><p> Mindfulness practices such as deep breathing, progressive muscle relaxation, and meditation can reduce anxiety and stress, making it easier to manage flashbacks and nightmares. Engaging in these practices regularly helps individuals stay grounded and calm, even when distressing memories arise.</p></li>
+<li><b class="highlight"> Talking About the Trauma:</b><br/><p> Sometimes, the act of talking about the trauma with a trusted individual or therapist can help lessen the power of flashbacks and nightmares. Sharing the experience in a safe space can lead to better emotional processing and reduce the frequency of these episodes.</p></li>
+<li><b class="highlight"> Journaling:</b><br/><p> Writing down thoughts and feelings before bed can help externalize emotions and decrease the likelihood of experiencing nightmares. Keeping a journal also provides a way to track triggers and patterns, offering insights into what may help reduce these distressing experiences.</p></li>
+<li><b class="highlight"> Professional Support:</b><br/><p> Seeking help from a mental health professional is a must, especially if flashbacks and nightmares are significantly impacting daily life. Therapies such as Cognitive Behavioral Therapy (CBT), and trauma-focused therapy have been proven effective in reducing these symptoms.</p></li>
+
+                    </ol>
+                `
+            }
+        };
+
+        // Event Listeners
+        document.querySelectorAll('.topic-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const section = this.getAttribute('data-section');
+                const topic = this.getAttribute('data-topic');
+                
+                document.getElementById('content-title').textContent = this.textContent;
+                document.getElementById('content-body').innerHTML = contentMap[section][topic];
+            });
+        });
+    </script>
+
+
+
+
+</body>
+</html>
